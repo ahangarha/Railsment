@@ -11,9 +11,25 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="flex flex-col min-h-screen">
+    <header class="flex gap-4 bg-gradient-to-b from-blue-500 to-blue-600 text-white">
+      <div class="p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </div>
+      <div class="grow text-center p-2">
+        <%= @page_title || 'NO TITLE' %>
+      </div>
+      <div class="p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </div>
+    </header>
+
+    <main class="container mx-auto flex flex-col gap-4 my-8 px-4 grow prose">
       <%= yield %>
     </main>
+
+    <footer class="text-center bg-gray-800 text-white p-2 text-xs">
+      Built with Rails | Released under AGPL
+    </footer>
   </body>
 </html>
