@@ -4,4 +4,8 @@ class Group < ApplicationRecord
   has_many :payments, through: :group_payments
 
   validates :name, presence: true
+
+  def total_amount
+    payments.sum(&:amount)
+  end
 end
