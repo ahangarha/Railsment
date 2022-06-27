@@ -1,0 +1,30 @@
+<div class="grow bg-gray-100">
+  <div class="container mx-auto sm:rounded-b-3xl flex items-center justify-between gap-4 border-b-2 bg-white p-4">
+    <p>Total Amount</p>
+    <p><%= @total %></p>
+  </div>
+
+  <% if @groups.blank? %>
+
+  <div class="container mx-auto flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <% @groups.each do |group| %>
+      <%= link_to group_path(group), class: 'flex gap-2 rounded bg-white p-3 shadow hover:shadow-lg' do %>
+        <img src="<%= group.icon %>" alt="" class="h-16 w-16 bg-gray-400 object-cover rounded" />
+        <div class="flex flex-col gap-4 justify-between text-gray-500 grow">
+          <h4 class="text-lg"><%= group.name %></h4>
+          <p class="text-xs"><%= group.created_at.strftime("%d %b %Y") %></p>
+        </div>
+        <div class="">
+          <%= group.total_amount %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% else %>
+
+  <div class="text-center p-4">
+    You don't have any category yet! Create one.
+  </div>
+  <% end %>
+</div>

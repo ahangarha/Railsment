@@ -11,12 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen text-gray-800">
     <header class="flex gap-4 bg-gradient-to-b from-blue-500 to-blue-600 text-white">
       <div class="p-2">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </div>
-      <div class="grow text-center p-2">
+      <div class="grow text-center p-2 uppercase">
         <%= @page_title || 'NO TITLE' %>
       </div>
       <div class="p-2">
@@ -24,7 +24,7 @@
       </div>
     </header>
 
-    <main class="container mx-auto flex flex-col gap-4 my-8 px-4 grow prose">
+    <main class="flex flex-col gap-4 grow">
       <%= yield %>
     </main>
 
