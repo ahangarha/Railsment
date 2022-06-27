@@ -1,4 +1,4 @@
 class GroupPayment < ApplicationRecord
-  belongs_to :payment_id
-  belongs_to :group_id
+  belongs_to :payment
+  belongs_to :group
 end
