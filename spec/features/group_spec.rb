@@ -31,5 +31,17 @@ RSpec.describe 'Group', type: :feature do
 
       expect(page).to have_content('Bills')
     end
+
+    it 'shows detail of the group by clicking on it' do
+      visit new_group_path
+      fill_in 'Name', with: 'Bills'
+      fill_in 'Icon', with: 'some_image_url'
+      click_button 'Save'
+
+      click_link 'Bills'
+
+      expect(page).to have_current_path(group_path(Group.last.id))
+      expect(page).to have_content("Bills\n$0")
+    end
   end
 end
