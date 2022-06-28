@@ -5,7 +5,7 @@ RSpec.describe Group, type: :model do
     User.create!(name: 'Mostafa', email: 'mostafa@rails.com', password: '123456')
   end
 
-  let(:the_group) { Group.new(user: User.first, name: 'Bills') }
+  let(:the_group) { Group.new(user: User.first, name: 'Bills', icon: 'https://someimage') }
 
   context 'validation' do
     it 'passes initially' do
@@ -14,6 +14,11 @@ RSpec.describe Group, type: :model do
 
     it 'fails with no name' do
       the_group.name = nil
+      expect(the_group).to_not be_valid
+    end
+
+    it 'fails with no icon path' do
+      the_group.icon = nil
       expect(the_group).to_not be_valid
     end
   end
