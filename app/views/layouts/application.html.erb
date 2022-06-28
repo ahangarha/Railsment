@@ -23,7 +23,7 @@
     </footer>
 
     <% flash.each do |name, msg| %>
-    <div class="fixed buttom-4 right-4 flex align-start rounded-lg shadow-lg not-prose <%= "#{name}" %>">
+    <div class="fixed bottom-4 right-4 flex align-start rounded-lg shadow-lg not-prose <%= "#{name}" %>">
       <p class="grow p-4"><%= msg %></p>
       <button class="p-4" onclick="this.parentElement.remove()">✕</button>
     </div>
