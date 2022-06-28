@@ -1,9 +1,11 @@
+@import url('http://fonts.cdnfonts.com/css/proxima-nova-2?styles=44817,44813');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .btn {
-  @apply py-2 px-4 cursor-pointer inline-block;
+  @apply py-2 px-4 cursor-pointer inline-block text-sm font-bold;
 }
 
 .btn-primary {
@@ -20,4 +22,14 @@
 
 .notice {
   @apply bg-green-300;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  @apply border-b px-2 py-3;
+}
+
+form .field {
+  @apply px-2 py-3;
 }
