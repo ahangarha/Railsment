@@ -27,4 +27,21 @@ class GroupsController < ApplicationController
       target: root_path
     }
   end
+
+  def create
+    group = Group.new(groups_params)
+    group.user = current_user
+
+    if group.save!
+      redirect_to root_path, notice: 'New category added'
+    else
+      redirect_to new_group_path, alert: 'Failed to save!'
+    end
+  end
+
+  private
+
+  def groups_params
+    params.require(:group).permit(:name, :icon)
+  end
 end
