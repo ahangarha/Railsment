@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User Signup', type: :feature do
-  it 'regirects to categories list after registration' do
+  it 'redirects to categories list after registration' do
     visit root_path
     click_link 'Register'
     fill_in 'Name', with: 'Mostafa'

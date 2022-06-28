@@ -12,7 +12,7 @@ RSpec.describe 'User Login', type: :feature do
     expect(page).to have_link('Register')
   end
 
-  it 'gets splash screen without login' do
+  it 'redirects to categories page after login' do
     visit root_path
     click_link 'Login'
     fill_in 'Email', with: 'mostafa@rails.com'
