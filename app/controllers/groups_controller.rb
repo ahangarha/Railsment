@@ -15,5 +15,8 @@ class GroupsController < ApplicationController
   def show
     @group = Group.includes(:payments).find(params[:id])
     @page_title = @group.name
+    @page_back = {
+      target: root_path
+    }
   end
 end
