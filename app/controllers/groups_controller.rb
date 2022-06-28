@@ -19,4 +19,12 @@ class GroupsController < ApplicationController
       target: root_path
     }
   end
+
+  def new
+    @group = Group.new
+    @page_title = 'Add new group'
+    @page_back = {
+      target: root_path
+    }
+  end
 end
