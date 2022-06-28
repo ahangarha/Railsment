@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :groups, only: [:index, :show, :new]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :payments, only: [:new] 
 
   # Defines the root path route ("/")
   root "groups#index"

@@ -44,6 +44,23 @@ Group.create!(
 Payment.create!(
   author: User.first,
   groups: [Group.first],
-  name: 'Gas - January',
-  amount: 12
+  name: 'Gas - November 2021',
+  amount: 12,
+  created_at: '2021-12-15 19:57:12'
+)
+
+Payment.create!(
+  author: User.first,
+  groups: [Group.first],
+  name: 'Electrcity - January',
+  amount: 23.3,
+  created_at: '2022-02-21 13:11:57'
+)
+
+Payment.create!(
+  author: User.first,
+  groups: [Group.first],
+  name: 'Gas - March',
+  amount: 8.5,
+  created_at: '2022-04-10 08:10:32'
 )
