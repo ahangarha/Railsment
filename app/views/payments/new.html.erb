@@ -1,0 +1,12 @@
+<div class="flex flex-col gap-4 p-4">
+  <%= form_with model: @payment, class: 'flex flex-col gap-4 p-4 rounded bg-white' do |f| %>
+    <div class="flex flex-col gap-2">
+      <%= f.hidden_field :fallback_group_id, value: @group_id %>
+      <%= f.text_field :name, placeholder: :name, class: 'border-b px-2 py-3', required: true %>
+      <%= f.number_field :amount, placeholder: :amount, class: 'border-b px-2 py-3', required: true, min: 0, step: 0.01 %>
+
+      <%= f.collection_check_boxes :group_ids, @user_groups, :id, :name %>
+    </div>
+    <%= f.submit 'Save', class: 'btn-primary' %>
+  <% end %>
+</div>

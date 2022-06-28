@@ -27,5 +27,5 @@
     <p class="text-center">No transaction found!</p>
     
     <% end %>
-    <%= link_to "Add a new payment", new_payment_path, class: 'btn-primary self-center' %>
+    <%= link_to "Add a new payment", new_payment_path(group_id: @group[:id]), class: 'btn-primary self-center' %>
 </div>
