@@ -1,17 +1,16 @@
-<div class="flex flex-col gap-4 p-4">
+<div class="container mx-auto flex flex-col gap-4 p-4">
   <div class="flex flex-col gap-4 rounded bg-white p-3 shadow">
     <div class="flex items-center gap-2 text-lg font-bold">
       <img src="<%= @group.icon %>" alt="" class="h-12 w-12 bg-gray-400 object-cover" />
       <h2 class="grow"><%= @group.name %></h2>
       <p><%= "$#{@group.total_amount}" %></p>
     </div>
-    <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, commodi quod. Ut totam alias explicabo!</p>
 
     <% if @group.payments.present? %>
 
       <% @group.payments.order(created_at: :desc).each do |payment|%>
-      <hr />
       <div class="flex flex-col gap-2">
+        <hr />
         <div class="flex items-center gap-2">
           <h4 class="grow"><%= payment.name %></h4>
           <p><%= "$#{payment.amount}" %></p>
@@ -28,4 +27,5 @@
     <p class="text-center">No transaction found!</p>
     
     <% end %>
+    <%= link_to "Add a new payment", new_payment_path, class: 'btn-primary self-center' %>
 </div>
