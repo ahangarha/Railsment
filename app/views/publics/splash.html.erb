@@ -1,7 +1,9 @@
-<div class="text-center m-auto">
-  <h1><small>Welcome to</small><br />Railsment</h1>
-  <p>Track your payments</p>
+<div class="flex flex-col grow text-center sm:max-w-3xl sm:mx-auto">
+  <div class="grow grid place-content-center m-auto">
+    <h1 class="font-bold text-4xl">Railsment</h1>
+    <p class="">Track your payments</p>
+  </div>
 
-  <%= link_to "Register", new_user_registration_path, class: 'btn-primary' %>
-  <%= link_to "Login", new_user_session_path, class: 'btn-secondary' %>
+  <%= link_to "Login", new_user_session_path, class: 'btn bg-blue-600 hover:bg-blue-700 text-white' %>
+  <%= link_to "Register", new_user_registration_path, class: 'btn hover:text-blue-600' %>
 </div>

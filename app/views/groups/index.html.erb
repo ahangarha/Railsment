@@ -6,7 +6,7 @@
 
   <% if @groups.present? %>
 
-  <div class="container mx-auto flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+  <div class="container mx-auto flex flex-col md:grid md:grid-cols-2 gap-4 p-4">
     <% @groups.each do |group| %>
       <%= link_to group_path(group), class: 'flex gap-2 rounded bg-white p-3 shadow hover:shadow-lg' do %>
         <img src="<%= group.icon %>" alt="" class="h-16 w-16 bg-gray-400 object-cover rounded" />
