@@ -7,7 +7,7 @@
       <p>Choose at least one category:</p>
       <%= f.collection_check_boxes :group_ids, @user_groups, :id, :name, required: true do |item| %>
         <div class="flex gap-4 pl-4">
-          <%= item.check_box %>
+          <%= item.check_box(checked: item.value.to_s == @group_id) %>
           <%= item.label %>
         </div>
       <% end %>
