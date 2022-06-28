@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!, except: :index
+
   def index
     if user_signed_in?
       @page_title = 'Categories'
@@ -8,5 +10,9 @@ class GroupsController < ApplicationController
       @page_title = 'Welcome'
       render 'publics/splash'
     end
+  end
+
+  def show
+    @group = Group.includes(:payments).find(params[:id])
   end
 end
