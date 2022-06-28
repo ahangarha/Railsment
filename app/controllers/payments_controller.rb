@@ -3,7 +3,7 @@ class PaymentsController < ApplicationController
 
   def new
     @group_id = params[:group_id]
-    @user_groups = current_user.groups
+    @user_groups = current_user.groups.order(:name)
     @payment = Payment.new
 
     @page_title = 'Add new payment'
