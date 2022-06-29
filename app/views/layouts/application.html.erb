@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Railsment<%= " | #{@page_title}" if @page_title.present? %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="flex flex-col min-h-screen text-gray-800 bg-gray-100 pt-10">
+    <%= render "layouts/header" %>
+
+    <main class="flex flex-col gap-4 grow pb-8 lg:w-[768px] lg:mx-auto">
+      <%= yield %>
+    </main>
+
+    <footer class="text-center bg-gray-800 text-white p-2 text-xs">
+      Built with Rails | Released under <a href="https://github.com/ahangarha/Railsment" targer="black">AGPL</a>
+    </footer>
+
+    <% flash.each do |name, msg| %>
+    <div class="fixed bottom-4 right-4 flex align-start rounded-lg shadow-lg not-prose <%= "#{name}" %>">
+      <p class="grow p-4"><%= msg %></p>
+      <button class="p-4" onclick="this.parentElement.remove()">✕</button>
+    </div>
+    <%end%>
+  </body>
+</html>
