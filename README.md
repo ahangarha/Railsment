@@ -4,8 +4,6 @@ Railicious is an educational Rails application for tracking payments.
 
 ![screenshot](./screenshot.png)
 
-Live demo available on [heroku](https://railsment.herokuapp.com/).
-
 ## Built with
 
 - Ruby on Rails
